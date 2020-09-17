@@ -1,0 +1,90 @@
+.background
+    position: relative
+    top: 0
+    left: 0
+    background-color: $background
+    height: 100vh
+    width: 100%
+    overflow: hidden
+    .background__purple-circle
+        position: absolute
+        top: 5%
+        right: 10%
+        transform: translate(50%, -50%)
+        height: 30vh
+        width: 30vh
+        border-radius: 50%
+        background-color: $color-of-purple-circle
+        animation: purple-circle 30s reverse infinite linear
+    .background__square
+        position: absolute
+        top: 50%
+        right: 50%
+        transform: translate(50%, -50%)
+        height: 30vh
+        width: 30vh
+        border-radius: 20%
+        background-color: $color-of-square
+        animation: square 25s infinite linear
+    .background__blue-circle
+        position: absolute
+        top: 95%
+        left: 10%
+        transform: translate(-50%, -50%)
+        height: 25vh
+        width: 25vh
+        border-radius: 50%
+        background-color: $color-of-blue-circle
+        animation: blue-circle 30s 7.5s infinite linear
+    @media (orientation: landscape)
+        .background__purple-circle
+            height: 30vw
+            width: 30vw
+        .background__square
+            height: 30vw
+            width: 30vw  
+        .background__blue-circle
+            top: 85%
+            left: -5%
+            height: 25vw
+            width: 25vw
+    @keyframes purple-circle
+        25%
+            top: 50%
+            right: 50%
+        50%
+            top: 5%
+            right: 90%
+        75%
+            top: 50%
+            right: 50%
+        100%
+            top: 5%
+            right: 10%
+    @keyframes blue-circle
+        25%
+            top: 50%
+            left: 50%
+        50%
+            top: 95%
+            left: 90%
+        75%
+            top: 50%
+            left: 50%
+        100%
+            top: 95%
+            left: 10%
+    @keyframes square
+        25%
+            right: 90%
+            transform: rotate(180deg) translate(50%, -50%)
+        75%
+            right: -20%
+            transform: rotate(540deg) translate(50%, -50%)
+        100%
+            right: 50%
+            transform: rotate(720deg) translate(50%, -50%)
+            
+            
+        
+        

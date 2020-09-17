@@ -1,0 +1,51 @@
+.header
+    position: absolute
+    top: 5vh
+    left: 50%
+    transform: translateX(-50%)
+    .header__background
+        position: absolute
+        left: -9px
+        top: 8px
+        height: 40px
+        width: 70vw
+        border-radius: 20px
+        background-color: $background-in-header
+        z-index: -1
+    .text
+        line-height: 40px
+        width: 70vw
+        border: 1px solid black
+        border-radius: 20px
+        text-align: center
+        font-size: 1.5rem
+        font-family: 'Oswald', sans-serif
+@media (orientation: portrait) and (min-width: 740px)
+    .header__background
+        top: 13px
+        width: 50vw
+        height: 60px
+        border-radius: 40px
+    .text
+        border-radius: 40px
+        width: 50vw
+        line-height: 60px
+        font-size: 2rem
+@media (orientation: landscape)
+    .header
+        left: 25%
+        .header__background
+            width: 35vw
+        .text
+            width: 35vw
+@media (orientation: landscape) and (min-width: 1024px)
+    .header .text
+        font-size: 2rem
+@media (orientation: landscape) and (min-width: 1350px)
+    .header
+        left: 20% 
+        .text
+            font-size: 2.5rem
+
+        
+        

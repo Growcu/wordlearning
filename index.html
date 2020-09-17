@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0aaa83a5bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Word Learning</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="background__purple-circle"></div>
+        <div class="background__blue-circle"></div>
+        <div class="background__square"></div>
+    </div>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__background"></div>
+            <p class="text">Word Learning</p>
+        </header>
+        <main class="main">
+            <p class="main__asked-word" data-holder='asked-word'>Cat</p>
+            <input type="text" class="main__answer" data-holder='answer-input' placeholder="Wpisz odpowiedź">
+            <div class="buttons">
+                <button class="buttons__btn" data-holder='random'>Losuj</button>
+                <button class="buttons__btn" data-holder='check-word'>Sprawdź</button>
+            </div>
+            <div class="main__result">
+                <p class="main__correct-answer" data-holder='correct-answer-place'></p>
+                <div class="main__icons">
+                    <i class="fas fa-times" data-holder="times"></i>
+                    <i class="fas fa-check" data-holder="check"></i>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/js/code.js"></script>
+</body>
+
+</html>

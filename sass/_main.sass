@@ -1,0 +1,140 @@
+.main
+    position: absolute
+    left: 50%
+    top: 20vh
+    transform: translate(-50%)
+    width: 80%
+    height: 75vh
+    max-height: 500px 
+    display: flex
+    flex-direction: column
+    align-items: center
+    border-radius: 30px
+    box-shadow: 0 0 15px 0 black
+    background-color: #fff
+    .main__asked-word
+        margin-top: 5%
+        height: 30px
+        width: 80%
+        border-radius: 20px
+        border: 1px solid #555555
+        background-color: #aaaaaa
+        color: white
+        line-height: 30px
+        text-align: center
+        font-size: 1.5rem
+        font-family: 'Oswald', sans-serif
+    .main__answer
+        margin-top: 10%
+        text-align: center
+        height: 30px
+        width: 80%
+        border-radius: 20px
+        border: 1px solid black
+        box-shadow: 0 0 5px 0 black
+        font-family: 'Oswald', sans-serif
+    .main__answer:focus
+        outline: none
+        border-color: blue
+        box-shadow: 0 0 5px 0 blue
+    .buttons
+        margin-top: 10%
+        display: flex
+        width: 100%
+        justify-content: space-around
+        .buttons__btn
+            width: 35%
+            height: 35px
+            border: none
+            box-shadow: 0 0 2px 0 $buttons-color
+            border-radius: 20px
+            background-color: $buttons-color
+            color: white
+            font-weight: 700
+            text-transform: uppercase
+            font-family: 'Oswald', sans-serif
+        .buttons__btn:focus
+            outline: none
+    .main__result
+        display: flex
+        flex-direction: column-reverse
+        align-items: center
+        justify-content: space-around
+        flex-grow: 1
+        width: 80%
+        .main__correct-answer
+            height: 30px
+            width: 100%
+            border-radius: 20px
+            border: 1px solid #555555
+            background-color: #aaaaaa
+            text-align: center
+            font-size: 1.5rem
+            line-height: 30px
+            color: white
+            font-family: 'Oswald', sans-serif
+        .main__icons
+            flex-basis: 50%
+            width: 80%
+            display: flex
+            justify-content: space-around
+            align-items: center
+            .fas
+                font-size: 6rem
+            .fa-times
+                display: none
+                color: red
+            .fa-check
+                display: none
+                color: green
+            .fa-times--show
+                display: block
+            .fa-check--show
+                display: block
+@media (orientation: portrait) and (min-width: 720px)
+    .main
+        width: 60%
+        max-height: 700px
+        .main__asked-word
+            height: 40px
+            line-height: 40px
+            font-size: 2rem
+        .main__answer
+            height: 40px
+            font-size: 2rem
+        .buttons .buttons__btn
+            height: 45px
+            font-size: 2rem
+        .main__result .main__correct-answer
+            height: 40px
+            line-height: 40px
+        .main__result .main__icons .fas
+            font-size: 10rem
+@media (orientation: landscape)
+    .main
+        width: 50%
+        top: 5vh
+        left: 70%
+        height: 90vh
+@media (orientation: landscape) and (min-width: 1024px)
+    .main
+        left: 75%
+        max-height: 800px
+        .main__asked-word
+            height: 40px
+            line-height: 40px
+            font-size: 2rem
+        .main__answer
+            height: 40px
+            font-size: 2rem
+        .buttons .buttons__btn
+            height: 45px
+            font-size: 2rem
+        .main__result .main__correct-answer
+            height: 40px
+            line-height: 40px
+        .main__result .main__icons .fas
+            font-size: 15rem    
+@media (orientation: landscape) and (min-width: 1024px)
+    .main
+        left: 80%

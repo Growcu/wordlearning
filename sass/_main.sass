@@ -118,7 +118,11 @@
         height: 90vh
 @media (orientation: landscape) and (min-width: 1024px)
     .main
-        left: 75%
+        max-height: 630px
+        top: 15%
+        left: 50%
+@media (orientation: landscape) and (min-width: 1024px) and (min-height: 771px)
+    .main
         max-height: 800px
         .main__asked-word
             height: 40px
@@ -133,8 +137,7 @@
         .main__result .main__correct-answer
             height: 40px
             line-height: 40px
+            font-size: 2rem
         .main__result .main__icons .fas
-            font-size: 15rem    
-@media (orientation: landscape) and (min-width: 1024px)
-    .main
-        left: 80%
+            font-size: 15rem
+

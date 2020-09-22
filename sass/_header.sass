@@ -21,16 +21,18 @@
         font-size: 1.5rem
         font-family: 'Oswald', sans-serif
 @media (orientation: portrait) and (min-width: 740px)
-    .header__background
-        top: 13px
-        width: 50vw
-        height: 60px
-        border-radius: 40px
-    .text
-        border-radius: 40px
-        width: 50vw
-        line-height: 60px
-        font-size: 2rem
+    
+    .header
+        .header__background
+            top: 13px
+            width: 50vw
+            height: 60px
+            border-radius: 40px
+        .text
+            border-radius: 40px
+            width: 50vw
+            line-height: 60px
+            font-size: 2rem
 @media (orientation: landscape)
     .header
         left: 25%
@@ -39,11 +41,16 @@
         .text
             width: 35vw
 @media (orientation: landscape) and (min-width: 1024px)
-    .header .text
-        font-size: 2rem
+    .header
+        left: 50%
+        .header__background
+            width: 25vw
+        .text
+            width: 25vw
+            font-size: 2rem
 @media (orientation: landscape) and (min-width: 1350px)
     .header
-        left: 20% 
+        left: 50% 
         .text
             font-size: 2.5rem
 

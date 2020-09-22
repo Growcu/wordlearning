@@ -1,0 +1,66 @@
+.dark-mode
+    box-sizing: content-box
+    position: absolute
+    left: 3%
+    top: 5%
+    width: 20px
+    height: 40px
+    padding: 2px
+    border-radius: 10px
+    background-color: grey
+    .dark-mode__button
+        position: absolute
+        top: 2%
+        left: 50%
+        transform: translateX(-50%)
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        background-color: #fff
+        transition: .2s linear
+    .--dark-mode
+        top: 48%
+@media (orientation: portrait) and (min-width: 740px)
+    .dark-mode
+        left: 18%
+        top: 7%
+@media (orientation: landscape)
+    .dark-mode
+        left: 1%
+@media (orientation: landscape) and (min-width: 1024px)
+    .dark-mode
+        left: 28%
+@media (orientation: landscape) and (min-width: 1500px)
+    .dark-mode
+        left: 25%
+@media (orientation: landscape) and (min-width: 1700px)
+    .dark-mode
+        left: 22%
+    
+// Header
+.header.--dark-mode
+    .header__background
+        background-color: rgba(255, 255, 255, 0.4)
+    .text
+        border-color: white
+// Background
+.background.--dark-mode
+    background-color: $background-darkmode
+    .background__purple-circle
+        background-color: $color-of-purple-circle-darkmode
+    .background__square
+        background-color: $color-of-square-darkmode
+    .background__blue-circle
+        background-color: $color-of-blue-circle-darkmode
+.main.--dark-mode
+    background-color: #aaa
+    .main__asked-word
+        background-color: white
+        color: black 
+    .main__result .main__correct-answer
+        background-color: white
+        color: black 
+    .buttons
+        .buttons__btn
+            background-color: black
+            box-shadow: 0 0 2px 0 black

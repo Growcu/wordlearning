@@ -11,18 +11,21 @@
 </head>
 
 <body>
-    <div class="background">
-        <div class="background__purple-circle"></div>
+    <div class="background" data-holder="dark-mode">
+        <div class=" background__purple-circle"></div>
         <div class="background__blue-circle"></div>
         <div class="background__square"></div>
     </div>
     <div class="wrapper">
-        <header class="header">
+        <div class="dark-mode">
+            <div class="dark-mode__button" data-holder="dark-mode"></div>
+        </div>
+        <header class="header" data-holder="dark-mode">
             <div class="header__background"></div>
             <p class="text">Word Learning</p>
         </header>
-        <main class="main">
-            <p class="main__asked-word" data-holder='asked-word'>Cat</p>
+        <main class="main" data-holder="dark-mode">
+            <p class="main__asked-word" data-holder='asked-word'></p>
             <input type="text" class="main__answer" data-holder='answer-input' placeholder="Wpisz odpowiedź">
             <div class="buttons">
                 <button class="buttons__btn" data-holder='random'>Losuj</button>
@@ -38,6 +41,7 @@
         </main>
     </div>
     <script src="js/code.js"></script>
+    <script src="js/darkMode.js"></script>
 </body>
 
 </html>

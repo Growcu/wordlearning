@@ -14,6 +14,10 @@ const correctAnswer = document.querySelector("[data-holder='correct-answer-place
 // Ikony
 const times = document.querySelector("[data-holder='times']")
 const check = document.querySelector("[data-holder='check']")
+// Pop-up
+const popUp = document.querySelector("[data-holder='pop-up']")
+const popUpButton = document.querySelector("[data-holder='pop-up-button']")
+const popUpText = document.querySelector("[data-holder='pop-up-text']")
 
 // Losowanie słowa i resetownie pól
 
@@ -33,13 +37,27 @@ const randomWord = function () {
 const checkWord = function () {
 
     const wordTocheck = englishWords[numberOfWords];
-    const inputWord = input.value;
+    const inputWord = input.value.toLowerCase();
+    // inputWord = inputWord.toLowerCase();
 
     // Zabezpiecznia
-    if (!wordTocheck) return alert("Prosze wylosawać słowo");
+
+    if (!wordTocheck) {
+        popUp.classList.add("--show");
+        popUpText.textContent = "Proszę wylosować słowo";
+        popUpButton.addEventListener("click", popUpHide = () => {
+            popUp.classList.remove("--show");
+        })
+        return;
+    };
 
     if (inputWord === "") {
-        return alert("Proszę podać słowo");
+        popUp.classList.add("--show");
+        popUpText.textContent = "Proszę podać słowo";
+        popUpButton.addEventListener("click", popUpHide = () => {
+            popUp.classList.remove("--show");
+        });
+        return;
     } else if (isNaN(Number(inputWord))) {
         if (wordTocheck === inputWord) {
             check.classList.add("fa-check--show")
@@ -48,11 +66,13 @@ const checkWord = function () {
             correctAnswer.textContent = wordTocheck;
         }
         setTimeout(randomWord, 3000);
-    } else {
-
-        return alert("Podana wartość nie jest słowem");
     }
-
 }
+input.addEventListener("keyup", lock = (e) => {
+    if (e.keyCode >= 48 && e.keyCode <= 57) {
+        input.value = ""
+    }
+})
+// Nasłuchiwanie na zdarzenia
 document.querySelector("[data-holder='random']").addEventListener("click", randomWord);
 document.querySelector("[data-holder='check-word']").addEventListener("click", checkWord);

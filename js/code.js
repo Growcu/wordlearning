@@ -34,31 +34,26 @@ const randomWord = function () {
 
 // Funkcja sprawdzająca poprawność
 
+const popups = (content) => {
+    popUp.classList.add("--show");
+    popUpText.textContent = content;
+    popUpButton.addEventListener("click", popUpHide = () => {
+        popUp.classList.remove("--show");
+    })
+}
+
 const checkWord = function () {
 
     const wordTocheck = englishWords[numberOfWords];
     const inputWord = input.value.toLowerCase();
-    // inputWord = inputWord.toLowerCase();
 
     // Zabezpiecznia
 
-    if (!wordTocheck) {
-        popUp.classList.add("--show");
-        popUpText.textContent = "Proszę wylosować słowo";
-        popUpButton.addEventListener("click", popUpHide = () => {
-            popUp.classList.remove("--show");
-        })
-        return;
-    };
+    if (!wordTocheck) return popups("Proszę wylosować słowo");
 
-    if (inputWord === "") {
-        popUp.classList.add("--show");
-        popUpText.textContent = "Proszę podać słowo";
-        popUpButton.addEventListener("click", popUpHide = () => {
-            popUp.classList.remove("--show");
-        });
-        return;
-    } else if (isNaN(Number(inputWord))) {
+    if (inputWord === "") return popups("Proszę podać słowo");
+
+    else {
         if (wordTocheck === inputWord) {
             check.classList.add("fa-check--show")
         } else {

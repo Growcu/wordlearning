@@ -1,7 +1,7 @@
 // Dane 
 
-const englishWords = ["be fond of sb", "confide in sb", "date sb", "deal with sb", "easy to get on with", "feel sick to death of sb", "have a lot of common", "know sb by sight", "love at first sight", "relate to sb", "stay in touch with sb", "take care of sb", "take sb for granted"];
-const polishWords = ["lubić kogoś", "zwierzać sie komuś", "chodzić z kimś", "radzić sobie z kimś", "taki z którym można sie dogadać", "mieć kogoś serdecznie dosyć", "mieć wiele wspólnego", "znać kogoś z widzenia", "zakochać sie od pierwszego wejrzenia", "znaleźć z kimś wspólny język", "utrzymać z kimś kontakt", "zajmować sie kimś", "nie doceniać kogoś"];
+let englishWords = [];
+let polishWords = [];
 let numberOfWords = null;
 let inputWord = "";
 
@@ -26,6 +26,7 @@ const writeToInput = function () {
     input.value = inputWord;
 }
 const nextGame = function () {
+    if(!polishWords.length) return showPopup("Proszę wybrać dział");
     numberOfWords = Math.floor(Math.random() * polishWords.length);
     askedWord.textContent = polishWords[numberOfWords];
 }
@@ -36,10 +37,15 @@ const showPopup = (content) => {
         popUp.classList.remove("--show");
     })
 }
+const removeGoodWord = function() {
+    polishWords.splice(numberOfWords, 1);
+    englishWords.splice(numberOfWords, 1);
+}
 const checkWord = function () {
 
     const wordTocheck = englishWords[numberOfWords];
     const inputWord = input.value.toLowerCase();
+
 
     if (!wordTocheck) return showPopup("Proszę wylosować słowo");
 
@@ -48,6 +54,7 @@ const checkWord = function () {
     else {
         if (wordTocheck === inputWord) {
             check.classList.add("fa-check--show")
+            removeGoodWord()
         } else {
             times.classList.add("fa-times--show")
             correctAnswer.textContent = wordTocheck;
@@ -58,18 +65,20 @@ const checkWord = function () {
 }
 
 input.addEventListener("keyup", numersLock = (e) => {
-    if (e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode === 32) {
+    if (e.keyCode >= 65 && e.keyCode <= 90 || e.keyCode === 32 || e.keyCode === 189 || e.keyCode === 191 || e.keyCode === 222) {
         inputWord += e.key;
-        console.log(inputWord);
         return writeToInput();
     } else if (e.keyCode >= 48 && e.keyCode <= 57) {
         return writeToInput();
     } else if (e.keyCode === 8) {
         inputWord = inputWord.slice(0, inputWord.length - 1);
         return writeToInput();
+    } else {
+        return writeToInput();
     }
-    console.log(e.keyCode);
 })
-
+window.addEventListener("keydown", (e) => {
+    if(e.keyCode === 13) return checkWord();
+})
 document.querySelector("[data-holder='random']").addEventListener("click", nextGame);
 document.querySelector("[data-holder='check-word']").addEventListener("click", checkWord);
